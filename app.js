@@ -8,6 +8,10 @@ const firebaseConfig = {
   measurementId: "G-MSXGJMTJ2E"
 };
 
+/firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const db = firebase.firestore();
+
 // Email sign-up
 document.getElementById('signupEmailBtn').addEventListener('click', () => {
   const email = prompt("Enter your email");
@@ -15,7 +19,6 @@ document.getElementById('signupEmailBtn').addEventListener('click', () => {
 
   auth.createUserWithEmailAndPassword(email, password)
     .then(userCredential => {
-      // Save user to Firestore
       db.collection('users').doc(userCredential.user.uid).set({
         email: email,
         createdAt: firebase.firestore.FieldValue.serverTimestamp()
@@ -30,7 +33,6 @@ document.getElementById('loginGoogleBtn').addEventListener('click', () => {
   const provider = new firebase.auth.GoogleAuthProvider();
   auth.signInWithPopup(provider)
     .then(result => {
-      // Save user to Firestore
       db.collection('users').doc(result.user.uid).set({
         email: result.user.email,
         name: result.user.displayName,
