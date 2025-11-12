@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber Ideas Portal</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Cyber Ideas Portal</h1>
+  </header>
+
+  <main>
+    <section id="auth">
+      <h2>Login / Sign Up</h2>
+      <input type="email" id="email" placeholder="Email">
+      <input type="password" id="password" placeholder="Password">
+      <button id="signup">Sign Up</button>
+      <button id="login">Login</button>
+      <button id="googleSignIn">Sign in with Google</button>
+    </section>
+
+    <section id="forum" style="display:none;">
+      <h2>Share your idea</h2>
+      <textarea id="ideaInput" placeholder="Write your cybersecurity idea..."></textarea>
+      <button id="postIdea">Post Idea</button>
+      <div id="ideasList"></div>
+      <button id="logout">Logout</button>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
