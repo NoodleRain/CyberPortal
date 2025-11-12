@@ -1,164 +1,69 @@
-/* Base */
-body {
+body, html {
   margin: 0;
-  font-family: Arial, sans-serif;
-  color: #333;
-  background: #f9f9f9;
-}
-.container {
-  width: 90%;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 40px 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  height: 100%;
 }
 
-/* Header */
-.site-header {
-  background: #222;
-  color: #fff;
+.hero {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
   text-align: center;
-  padding: 60px 0 40px;
-}
-.site-header h1 {
-  margin: 0;
-  font-size: 2.5em;
-}
-.site-header p {
-  margin: 10px 0 30px;
-  font-size: 1.2em;
-}
-.main-nav a {
-  color: #fff;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-}
-.main-nav a:hover {
-  text-decoration: underline;
+  position: relative;
 }
 
-/* Articles Section */
-.latest-articles h2 {
-  text-align: center;
-  margin-bottom: 30px;
-}
-.articles-grid {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-.card {
-  background: #fff;
+.overlay {
   padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
-.card h3 {
-  margin-top: 0;
-}
-.card .meta {
-  color: #999;
-  font-size: 0.9em;
-  margin-bottom: 10px;
-}
-.card a {
-  color: #0066cc;
-  text-decoration: none;
-}
-.card a:hover {
-  text-decoration: underline;
 }
 
-/* About Section */
-.about-section {
-  background: #fff;
-  padding: 60px 20px;
-  text-align: center;
-}
-.about-section .btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 24px;
-  background: #0066cc;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 4px;
-}
-.about-section .btn:hover {
-  background: #0055aa;
+h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  animation: fadeInDown 1.2s ease forwards;
 }
 
-/* Newsletter Section */
-.newsletter-section {
-  text-align: center;
+p {
+  font-size: 1.2em;
+  margin: 10px 0;
+  animation: fadeIn 1.5s ease forwards;
 }
-.newsletter-section form {
-  margin-top: 20px;
-}
-.newsletter-section input[type="email"] {
-  width: 60%;
-  max-width: 400px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-.newsletter-section button {
+
+.auth-buttons button {
   padding: 12px 24px;
-  margin-left: 10px;
-  background: #0066cc;
-  color: #fff;
+  margin: 10px;
   border: none;
-  border-radius: 4px;
-}
-.newsletter-section button:hover {
-  background: #0055aa;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-/* Forum Section */
-.forum-section {
-  background: #fff;
-  padding: 60px 20px;
+#signupEmailBtn { background: #ff5722; color: white; }
+#signupEmailBtn:hover { background: #e64a19; }
+
+#loginGoogleBtn { background: #4285F4; color: white; }
+#loginGoogleBtn:hover { background: #3367d6; }
+
+footer {
   text-align: center;
-}
-.forum-section .btn {
-  padding: 12px 24px;
-  background: #0066cc;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 4px;
-}
-.forum-section .btn:hover {
-  background: #0055aa;
+  padding: 20px;
+  background: #111;
+  color: #ccc;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
 }
 
-/* Footer */
-.site-footer {
-  background: #222;
-  color: #ccc;
-  text-align: center;
-  padding: 40px 0;
+/* Animations */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-50px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-.site-footer .social-links a {
-  color: #ccc;
-  text-decoration: none;
-  margin: 0 8px;
-}
-.site-footer .social-links a:hover {
-  color: #fff;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .site-header h1 {
-    font-size: 1.8em;
-  }
-  .newsletter-section input[type="email"] {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  .newsletter-section button {
-    width: 100%;
-    margin: 0;
-  }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
