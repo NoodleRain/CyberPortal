@@ -2,38 +2,68 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cyber Ideas Portal</title>
   <link rel="stylesheet" href="style.css">
-
-  <!-- Firebase SDK -->
+  <!-- Firebase SDKs -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Cyber Ideas Portal</h1>
+  <header class="site-header">
+    <div class="container">
+      <h1>Cyber Ideas Portal</h1>
+      <p>Your go‑to place for cybersecurity & IT innovation, ideas, insights.</p>
+      <nav class="main-nav">
+        <a href="#articles">Articles</a>
+        <a href="#forum">Forum</a>
+        <a href="#newsletter">Newsletter</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section id="auth">
-      <h2>Login / Sign Up</h2>
-      <input type="email" id="email" placeholder="Email">
-      <input type="password" id="password" placeholder="Password">
-      <button id="signup">Sign Up</button>
-      <button id="login">Login</button>
-      <button id="googleSignIn">Sign in with Google</button>
-    </section>
+  <section id="articles" class="container latest-articles">
+    <h2>Latest Articles & Ideas</h2>
+    <div class="articles-grid">
+      <!-- Example article card (you’ll duplicate/update these as you publish) -->
+      <article class="card">
+        <h3>How to build a strong cybersecurity strategy</h3>
+        <p class="meta">Aug 2025 • Strategy</p>
+        <p>Explore the six‑step guide organisations use to structure their cyber defence approach. <a href="#">Read more →</a></p>
+      </article>
+      <!-- More cards here -->
+    </div>
+  </section>
 
-    <section id="forum" style="display:none;">
-      <h2>Share your idea</h2>
-      <textarea id="ideaInput" placeholder="Write your cybersecurity idea..."></textarea>
-      <button id="postIdea">Post Idea</button>
-      <div id="ideasList"></div>
-      <button id="logout">Logout</button>
-    </section>
-  </main>
+  <section id="about" class="container about-section">
+    <h2>About The Portal</h2>
+    <p>This platform lets cybersecurity professionals, students and enthusiasts share insights, ideas and commentary in one community space. You can post your thoughts, discuss with peers, and stay up to date with the latest trends.</p>
+    <p><a href="#forum" class="btn">Join the discussion now</a></p>
+  </section>
+
+  <section id="newsletter" class="container newsletter-section">
+    <h2>Stay Updated</h2>
+    <p>Sign up to receive the latest ideas, articles and forum insights directly to your inbox.</p>
+    <form id="newsletterForm">
+      <input type="email" id="newsletterEmail" placeholder="Your email address" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <section id="forum" class="container forum-section">
+    <h2>Idea & Discussion Forum</h2>
+    <p>Post your cybersecurity or IT idea, comment on others, and engage with the community. <a href="#forum" class="btn">Go to Forum</a></p>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Cyber Ideas Portal. Connect with us:</p>
+      <div class="social-links">
+        <a href="#">LinkedIn</a> | <a href="#">Twitter</a> | <a href="#">GitHub</a>
+      </div>
+    </div>
+  </footer>
 
   <script src="app.js"></script>
 </body>
